@@ -10,7 +10,7 @@ const computerPlay = () => {
 const playerPlay = () => {
     const options = ['rock', 'paper', 'scissors']
     const choice = prompt('Enter your choice: ').toLowerCase()
-    if(!options.includes(choice)) return playerPlay()
+    if (!options.includes(choice)) return playerPlay()
     return choice
 }
 
@@ -33,30 +33,25 @@ const playGame = () => {
     let playerScore = 0
     let computerScore = 0
     let noWin = true
-    while(noWin) {
+    while (noWin) {
         const playerChoice = playerPlay()
         const computerChoice = computerPlay()
-        if(playerChoice === computerChoice) {
+        if (playerChoice === computerChoice) {
             console.log('tie')
             continue
         }
-        if(playRound(playerChoice, computerChoice)) {
+        if (playRound(playerChoice, computerChoice)) {
             playerScore++
-            console.log(`player wins cause computer chose ${computerChoice}`,'score:',playerScore,computerScore)
+            console.log(`player wins cause computer chose ${computerChoice}`, 'score:', playerScore, computerScore)
         } else {
             computerScore++
-            console.log(`player lost cause computer chose ${computerChoice}`,'score:',playerScore,computerScore)
+            console.log(`player lost cause computer chose ${computerChoice}`, 'score:', playerScore, computerScore)
         }
-        if(playerScore === 5 || computerScore === 5) {
+        if (playerScore === 5 || computerScore === 5) {
             noWin = false
-            console.log(((playerScore === 5) ? 'Congrats you win!' : 'Sorry, you lost.'),'final score:',playerScore,computerScore)
+            console.log(((playerScore === 5) ? 'Congrats you win!' : 'Sorry, you lost.'), 'final score:', playerScore, computerScore)
         }
     }
 }
 
 playGame()
-
-
-
-
-
