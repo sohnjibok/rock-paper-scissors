@@ -7,6 +7,13 @@ const computerPlay = () => {
     return options[getRandomInt(3)]
 }
 
+const playerPlay = () => {
+    const options = ['rock', 'paper', 'scissors']
+    const choice = prompt('Enter your choice: ').toLowerCase()
+    if(!options.includes(choice)) return playerPlay()
+    return choice
+}
+
 const playRound = (playerChoice, computerChoice) => {
     if (playerChoice === 'rock') {
         if (computerChoice === 'scissors') return true
@@ -21,3 +28,6 @@ const playRound = (playerChoice, computerChoice) => {
         return false
     }
 }
+
+const playerChoice = playerPlay()
+console.log(playerChoice);
