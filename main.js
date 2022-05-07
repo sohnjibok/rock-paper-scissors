@@ -7,7 +7,20 @@ const computerPlay = () => {
     return options[getRandomInt(3)]
 }
 
-const computerChoice = computerPlay()
+const playRound = (playerSelection, computerSelection) => {
+    if (playerSelection === computerSelection) return `Draw. Both chose ${playerSelection}`
+    if(playerSelection === 'rock') {
+        if(computerSelection === 'paper') return `You lose. Computer chose ${computerSelection} whilst you chose ${playerSelection}`
+        return `You win! Computer chose ${computerSelection} whilst you chose ${playerSelection}`
+    }
+    if(playerSelection === 'paper') {
+        if(computerSelection === 'rock') return `You lose. Computer chose ${computerSelection} whilst you chose ${playerSelection}`
+        return `You win! Computer chose ${computerSelection} whilst you chose ${playerSelection}`
+    }
+    if(playerSelection === 'scissors') {
+        if(computerSelection === 'paper') return `You lose. Computer chose ${computerSelection} whilst you chose ${playerSelection}`
+        return `You win! Computer chose ${computerSelection} whilst you chose ${playerSelection}`
+    }
+}
 
-console.log(computerChoice);
 
