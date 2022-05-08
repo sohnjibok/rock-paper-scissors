@@ -20,6 +20,11 @@ const playerPlay = (event) => {
 const playRound = (playerChoice) => {
     const computerChoice = computerPlay()
 
+    if(playerChoice === computerChoice) {
+        console.log('tie: ', playerChoice, computerChoice)
+        return
+
+    }
     if (playerChoice === 'rock') {
         if (computerChoice === 'scissors') {
             pscore++
