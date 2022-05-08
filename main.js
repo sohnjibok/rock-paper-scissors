@@ -1,5 +1,6 @@
 let playerScore = document.querySelector('#player')
 let computerScore = document.querySelector('#computer')
+let gameLog = document.querySelector('#game-log')
 
 let pscore = 0
 let cscore = 0
@@ -21,33 +22,40 @@ const playRound = (playerChoice) => {
     const computerChoice = computerPlay()
 
     if(playerChoice === computerChoice) {
+        gameLog.textContent = `Tie: both chose ${playerChoice}`
         console.log('tie: ', playerChoice, computerChoice)
         return
 
     }
     if (playerChoice === 'rock') {
         if (computerChoice === 'scissors') {
+            gameLog.textContent = `${playerChoice} beats ${computerChoice}`
             pscore++
             playerScore.textContent = pscore
         } else {
+            gameLog.textContent = `${playerChoice} loses to ${computerChoice}`
             cscore++
             computerScore.textContent = cscore
         }
     }
     if (playerChoice === 'paper') {
         if (computerChoice === 'rock') {
+            gameLog.textContent = `${playerChoice} beats ${computerChoice}`
             pscore++
             playerScore.textContent = pscore
         } else {
+            gameLog.textContent = `${playerChoice} loses to ${computerChoice}`
             cscore++
             computerScore.textContent = cscore
         }
     }
     if (playerChoice === 'scissors') {
         if (computerChoice === 'paper') {
+            gameLog.textContent = `${playerChoice} beats ${computerChoice}`
             pscore++
             playerScore.textContent = pscore
         } else {
+            gameLog.textContent = `${playerChoice} loses to ${computerChoice}`
             cscore++
             computerScore.textContent = cscore
         }
