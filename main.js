@@ -29,29 +29,44 @@ const playRound = (playerChoice, computerChoice) => {
     }
 }
 
-const playGame = () => {
-    let playerScore = 0
-    let computerScore = 0
-    let noWin = true
-    while (noWin) {
-        const playerChoice = playerPlay()
-        const computerChoice = computerPlay()
-        if (playerChoice === computerChoice) {
-            console.log('tie')
-            continue
-        }
-        if (playRound(playerChoice, computerChoice)) {
-            playerScore++
-            console.log(`player wins cause computer chose ${computerChoice}`, 'score:', playerScore, computerScore)
-        } else {
-            computerScore++
-            console.log(`player lost cause computer chose ${computerChoice}`, 'score:', playerScore, computerScore)
-        }
-        if (playerScore === 5 || computerScore === 5) {
-            noWin = false
-            console.log(((playerScore === 5) ? 'Congrats you win!' : 'Sorry, you lost.'), 'final score:', playerScore, computerScore)
-        }
-    }
-}
 
-playGame()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // const playGame = () => {
+    //     let playerScore = 0
+    //     let computerScore = 0
+    //     let noWin = true
+    //     while (noWin) {
+    //         const playerChoice = playerPlay()
+    //         const computerChoice = computerPlay()
+    //         if (playerChoice === computerChoice) {
+    //             console.log('tie')
+    //             continue
+    //         }
+    //         if (playRound(playerChoice, computerChoice)) {
+    //             playerScore++
+    //             console.log(`player wins cause computer chose ${computerChoice}`, 'score:', playerScore, computerScore)
+    //         } else {
+    //             computerScore++
+    //             console.log(`player lost cause computer chose ${computerChoice}`, 'score:', playerScore, computerScore)
+    //         }
+    //         if (playerScore === 5 || computerScore === 5) {
+    //             noWin = false
+    //             console.log(((playerScore === 5) ? 'Congrats you win!' : 'Sorry, you lost.'), 'final score:', playerScore, computerScore)
+    //         }
+    //     }
+    // }
