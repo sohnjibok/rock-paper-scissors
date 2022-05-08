@@ -1,9 +1,8 @@
-// GRAB HTML ELEMENTS
-const button = document.querySelectorAll('.game-button')
-const playerScoreBoard = document.getElementById('player')
-const computerScoreBoard = document.getElementById('computer')
+let playerScore = document.querySelector('#player')
+let computerScore = document.querySelector('#computer')
 
-console.log(button, playerScoreBoard, computerScoreBoard)
+let pscore = 0
+let cscore = 0
 
 const getRandomInt = (max) => {
     return Math.floor(Math.random() * max)
@@ -18,34 +17,45 @@ const playerPlay = (event) => {
     return event.id.toString()
 }
 
-button.forEach(button => button.addEventListener('click', event => {
-    let playerChoice = playerPlay(event.target)
-    let computerChoice = computerPlay()
-    if(playerChoice === computerChoice) console.log(`both chose ${playerChoice}`)
-    if(playRound(playerChoice, computerChoice)) {
-        console.log(`player won because player chose ${playerChoice} and computer chose ${computerChoice}`)
-    } else {
-        console.log(`player lost since player chose ${playerChoice} and computer chose ${computerChoice}`);
-    }
-}))
+const playRound = (playerChoice) => {
+    const computerChoice = computerPlay()
 
-
-const playRound = (playerChoice, computerChoice) => {
     if (playerChoice === 'rock') {
-        if (computerChoice === 'scissors') return true
-        return false
+        if (computerChoice === 'scissors') {
+            pscore++
+            playerScore.textContent = pscore
+        } else {
+            cscore++
+            computerScore.textContent = cscore
+        }
     }
     if (playerChoice === 'paper') {
-        if (computerChoice === 'rock') return true
-        return false
+        if (computerChoice === 'rock') {
+            pscore++
+            playerScore.textContent = pscore
+        } else {
+            cscore++
+            computerScore.textContent = cscore
+        }
     }
     if (playerChoice === 'scissors') {
-        if (computerChoice === 'paper') return true
-        return false
+        if (computerChoice === 'paper') {
+            pscore++
+            playerScore.textContent = pscore
+        } else {
+            cscore++
+            computerScore.textContent = cscore
+        }
     }
+    console.log(playerChoice, computerChoice);
+    if (pscore === 5) document.querySelector('#scoreboard').textContent = 'Player wins'
+    if (cscore === 5) document.querySelector('#scoreboard').textContent = 'Computer wins'
 }
 
-
+const buttons = document.querySelectorAll('button')
+buttons.forEach(button => button.addEventListener('click', event => {
+    playRound(event.target.id)
+}))
 
 
 
