@@ -1,3 +1,10 @@
+// GRAB HTML ELEMENTS
+const button = document.querySelectorAll('.game-button')
+const playerScoreBoard = document.getElementById('player')
+const computerScoreBoard = document.getElementById('computer')
+
+console.log(button, playerScoreBoard, computerScoreBoard)
+
 const getRandomInt = (max) => {
     return Math.floor(Math.random() * max)
 }
@@ -7,12 +14,21 @@ const computerPlay = () => {
     return options[getRandomInt(3)]
 }
 
-const playerPlay = () => {
-    const options = ['rock', 'paper', 'scissors']
-    const choice = prompt('Enter your choice: ').toLowerCase()
-    if (!options.includes(choice)) return playerPlay()
-    return choice
+const playerPlay = (event) => {
+    return event.id.toString()
 }
+
+button.forEach(button => button.addEventListener('click', event => {
+    let playerChoice = playerPlay(event.target)
+    let computerChoice = computerPlay()
+    if(playerChoice === computerChoice) console.log(`both chose ${playerChoice}`)
+    if(playRound(playerChoice, computerChoice)) {
+        console.log(`player won because player chose ${playerChoice} and computer chose ${computerChoice}`)
+    } else {
+        console.log(`player lost since player chose ${playerChoice} and computer chose ${computerChoice}`);
+    }
+}))
+
 
 const playRound = (playerChoice, computerChoice) => {
     if (playerChoice === 'rock') {
