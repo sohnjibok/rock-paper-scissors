@@ -11,11 +11,16 @@
 
 <body>
     <div class="container">
-        <h1>Welcome to <code>Rock Paper Scissors!</code></h1>
-        <div>Score: <span id="player"></span><span id="computer"></span></div>
-        <button>rock</button>
-        <button>paper</button>
-        <button>scissors</button>
+        <h1><code>Rock Paper Scissors!</code></h1>
+        <p id="game-log">The score is...</p>
+        <div id="scoreboard">
+            <span id="player">0</span><span id="computer">0</span>
+        </div>
+        <div id="player-choices">
+            <button id="rock">🪨</button>
+            <button id="paper">📃</button>
+            <button id="scissors">✂️</button>
+        </div>
     </div>
     <script src="main.js"></script>
 </body>

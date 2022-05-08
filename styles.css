@@ -1,7 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: black;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    padding: 0 15rem;
+    text-align: center;
+}
+
+.container h1 {
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 7rem;
 }
 
 code {
@@ -13,7 +30,39 @@ code {
     padding: 0 1rem;
 }
 
-h1 {
+#game-log {
+    font-size: 2rem;
+    margin: 4rem;
+}
+
+#scoreboard {
     text-align: center;
-    padding-top: 3rem;
+    font-size: 4rem;
+    margin-top: 4rem;
+}
+
+#scoreboard span {
+    padding: 3rem;
+}
+
+#player-choices {
+    text-align: center;
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#player-choices button {
+    font-size: 3rem;
+    background-color: transparent;
+    padding: 1rem;
+    border: 3px solid white;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 30px;
+}
+
+#player-choices button:hover {
+    background-color: green;
+    border: 5px solid gray;
 }
